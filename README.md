@@ -49,7 +49,8 @@ contract SimpleStorage {
         }
         storedData -= amount;
     }
-}```
+}
+```
 
 2. Compile the code:
     - Click on the "Solidity Compiler" tab in the left-hand sidebar.
