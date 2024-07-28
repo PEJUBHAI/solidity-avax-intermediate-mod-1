@@ -73,7 +73,6 @@ If you encounter any issues, make sure your Solidity version is compatible and t
 ## Authors
 
 Shawaiz Islam
-shawaizjutt978@gmail.com
 
 ## License
 
