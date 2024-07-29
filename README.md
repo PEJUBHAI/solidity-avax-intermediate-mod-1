@@ -19,7 +19,8 @@ To run this program, you can use Remix, an online Solidity IDE.
 ### Executing program
 
 1. Copy and paste the following code into the file:
- ```// SPDX-License-Identifier: MIT
+ ```sol
+ // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
 contract SimplePokemonGame {
