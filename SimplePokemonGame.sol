@@ -35,24 +35,15 @@ contract SimplePokemonGame {
         // Ensure trust level is between 0 and 100
         assert(pokemons[pokemonIndex].trustLevel >= 0 && pokemons[pokemonIndex].trustLevel <= 100);
 
-        // If trust level is below 0, reset the Pokemon
-        if (pokemons[pokemonIndex].trustLevel < 0) {
-            resetPokemon(pokemonIndex);
-        }
     }
 
-    // Internal function to reset a Pokemon
-    function resetPokemon(uint pokemonIndex) internal {
-        require(pokemonIndex < pokemons.length, "Invalid Pokemon index");  // Check if index is valid
-        pokemons[pokemonIndex] = Pokemon("", 0);  // Clear Pokemon's name and set trust level to 0
-    }
-
-    // Function to get a Pokemon's trust level
-    function getPokemonTrustLevel(uint pokemonIndex) public view returns (int) {
+    // Function to get a Pokemon's name and trust level
+    function getPokemonDetail(uint pokemonIndex) public view returns (string memory, int) {
         require(pokemonIndex < pokemons.length, "Invalid Pokemon index");  // Check if index is valid
         require(bytes(pokemons[pokemonIndex].name).length > 0, "No Pokemon in the team");  // Check if Pokemon exists
-        return pokemons[pokemonIndex].trustLevel;  // Return the trust level
+        return (pokemons[pokemonIndex].name, pokemons[pokemonIndex].trustLevel);  // Return the name and trust level
     }
+
 
     // Internal function to compare two strings
     function compareStrings(string memory a, string memory b) internal pure returns (bool) {
